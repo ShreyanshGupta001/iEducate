@@ -1,0 +1,19 @@
+{
+    "params": {
+        "local_server": "True",
+        "local_uri": "mysql://root:@localhost/ieducate",
+        "prod_uri": "mysql://root:@localhost/ieducate",
+        "facebook_url": "https://facebook.com/ieducate",
+        "twitter_url": "https://twitter.com/ieducate",
+        "github_url": "https://github.com/ieducate",
+        "adminid": "scannergamer",
+        "adminpass": "shree83180",
+        "secretkey": "super-secret-key",
+        "adminPanelImage": "bootstrap-logo.svg",
+        "admin_title_length": 35,
+        "brand_name": "iEDUCATE",
+        "brand_title": "A Tool For Mordern Education",
+        "no_of_homeposts": 3,
+        "about": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nostrum ullam eveniet pariatur voluptates odit, fuga atque ea nobis sit soluta odio, adipisci quas excepturi maxime quae totam ducimus consectetur?"
+    }
+}

@@ -1,0 +1,15 @@
+{% extends 'update.html' %} {% block subtitle %} Add a New Post {% endblock subtitle %} {% block moreDetails %}
+<div class="form-floating">
+    <input class="form-control" id="slug" type="text" name='slug' placeholder="Enter your phone number..." data-sb-validations="required,email" />
+    <label for="slug">Slug</label>
+    <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+    <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+</div>
+<div class="form-floating">
+    <input class="form-control" id="imageFileName" type="text" name='imageFileName' placeholder="Enter your phone number..." data-sb-validations="required,email" />
+    <label for="imageFileName">Image File - name</label>
+    <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+    <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+</div>
+
+{% endblock moreDetails %} {% block formaction %} action="/dashboard/addnewpost" {% endblock formaction %}
