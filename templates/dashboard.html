@@ -1,0 +1,75 @@
+{% extends 'base.html' %} {% block title %} DashBoard {% endblock title %} {% block navlogout %}
+<li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/dashboard/logout">Logout</a></li>
+{% endblock navlogout %} {% block body %} {% block style %}
+<style>
+    header {
+        height: 45vh;
+    }
+    
+    .basicactions {
+        font-size: 1.2rem;
+    }
+    
+    input[type="file"] {
+        width: 16rem;
+        font-size: 1.1rem;
+    }
+    
+    .addnew {
+        font-size: 1.6rem;
+    }
+</style>
+{% endblock style %}
+
+<header class="masthead" style="background-image: url({{url_for('static',filename='images/home-bg.jpg')}})">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="site-heading">
+                    <h1>DashBoard</h1>
+                    <span class="subheading">Welcome to the Admin Panel</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container d-block mb-4 text-center basicactions flex-wrap">
+    <label class="me-4 addnew mt-5">Add a New Post From Here</label>
+    <a href="/dashboard/addnewpost"> <button class="btn btn-primary">NEW POST</button></a>
+</div>
+<hr>
+
+<div class="container">
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for post in posts %}
+
+
+                <tr>
+                    <th scope="row">{{loop.index}}</th>
+                    <td>{{post.title[0:params['admin_title_length']]+'...'}}</td>
+                    <td>{{post.date}}</td>
+                    <td>
+                        <a href="/dashboard/update/{{post.slug}}"><button class="btn btn-sm btn-primary mt-2">Update</button></a>
+                        <a href="/dashboard/delete/{{post.slug}}"><button class=" btn btn-sm btn-primary mt-2">Delete</button></a>
+
+                    </td>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+{% endblock body %} {% block footer %} {% endblock footer %}
